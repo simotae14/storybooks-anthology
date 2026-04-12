@@ -8,7 +8,9 @@ const meta: Meta<typeof Button> = {
   component: Button,
   args: {
     children: 'Button',
+    variant: 'primary',
     disabled: false,
+    size: 'medium',
   },
   argTypes: {
     disabled: {
@@ -40,5 +42,21 @@ export const Destructive: Story = {
   args: {
     children: 'Button',
     variant: 'destructive',
+  },
+};
+
+export const Small: Story = {
+  args: {
+    children: 'Button',
+    variant: 'primary',
+    size: 'small',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    children: 'Button',
+    variant: 'primary',
+    size: 'large',
   },
 };
