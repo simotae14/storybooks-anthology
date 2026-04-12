@@ -13,10 +13,23 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args: {
+    children: 'Button',
+    variant: 'primary',
+  },
+};
 
 export const Secondary: Story = {
   args: {
-    children: 'Secondary Button',
+    children: 'Button',
+    variant: 'secondary',
+  },
+};
+
+export const Destructive: Story = {
+  args: {
+    children: 'Button',
+    variant: 'destructive',
   },
 };
