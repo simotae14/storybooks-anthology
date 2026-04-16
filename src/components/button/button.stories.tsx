@@ -68,3 +68,11 @@ export const Dark: Story = {
     },
   },
 };
+
+export const Mobile: Story = {
+  parameters: {
+    viewport: {
+      defaultViewport: 'mobile1',
+    },
+  },
+};
