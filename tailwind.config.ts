@@ -1,14 +1,20 @@
 import type { Config } from 'tailwindcss';
+import { colors, white, black, currentColor, transparent } from './src/tokens/colors';
 
 export default {
   content: ['./src/**/*.tsx', './src/**/*.ts', './src/**/*.mdx'],
   darkMode: ['class', '[data-mode="dark"]'],
   theme: {
+    colors: {
+      ...colors,
+      white,
+      black,
+      transparent,
+      currentColor,
+    },
     extend: {
-      colors: {
-        primary: {
-          600: '#4338ca', // Add your desired color value here
-        },
+      fontFamily: {
+        sans: ['Inter Variable', 'sans-serif'],
       },
     },
   },
