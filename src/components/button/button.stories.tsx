@@ -4,7 +4,7 @@ import { Button } from './button';
 type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
-  title: 'Button',
+  title: 'Components/Button',
   component: Button,
   args: {
     children: 'Button',
@@ -13,6 +13,18 @@ const meta: Meta<typeof Button> = {
     size: 'medium',
   },
   argTypes: {
+    children: {
+      name: 'Label',
+      control: 'select',
+      description: 'Text to display on the button',
+      options: ['Button', 'Click Me', 'Submit', 'Cancel'],
+      // table: {
+      //   disable: true,
+      // },
+    },
+    size: {
+      control: 'select',
+    },
     disabled: {
       control: 'boolean',
     },
