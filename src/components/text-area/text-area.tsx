@@ -37,9 +37,15 @@ export const TextArea = ({ label, required, maxLength, ...props }: TextAreaProps
       />
 
       {maxLength && (
-        <div className="gap-1.4 flex justify-end text-xs">
-          <p className={clsx(tooLong ? 'text-danger-400' : 'text-slate-400')}>
-            <span data-testid="length">{length}</span>/{maxLength}
+        <div className="gap-1.4 flex justify-end text-xs text-slate-500">
+          <p>
+            <span
+              className={clsx(tooLong ? 'text-danger-600' : 'text-slate-500')}
+              data-testid="length"
+            >
+              {length}
+            </span>
+            /{maxLength}
           </p>
         </div>
       )}
