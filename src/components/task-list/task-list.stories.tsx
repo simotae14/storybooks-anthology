@@ -6,21 +6,20 @@ import { TaskListProvider } from './task-list-context';
 const meta = {
   title: 'Components/TaskList',
   component: TaskList,
-  decorators: [
-    (Story, context) => {
-      console.log(context);
-      return (
-        <TaskListProvider
-          tasks={[
-            { id: '1', title: 'Task 1', completed: false },
-            { id: '2', title: 'Task 2', completed: true },
-            { id: '3', title: 'Task 3', completed: false },
-          ]}
-        >
-          <Story />
-        </TaskListProvider>
+  loaders: [
+    async () => {
+      const tasks = await fetch('https://jsonplaceholder.typicode.com/todos').then((res) =>
+        res.json(),
       );
+      return { tasks };
     },
+  ],
+  decorators: [
+    (Story, { loaded }) => (
+      <TaskListProvider tasks={loaded.tasks}>
+        <Story />
+      </TaskListProvider>
+    ),
   ],
 } as Meta<typeof TaskList>;
 
